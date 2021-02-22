@@ -1,0 +1,11 @@
+ol:
+  storedproc:
+    project:
+      oraSpSdk:
+        url: jdbc:oracle:thin:@3.234.66.7:1521:oradoc
+        driverClassName: oracle.jdbc.driver.OracleDriver
+        username: demo
+        password: '{cipher}35f27f3d02d4aa35bb97f14909a7b67be063c7410c058ee44c43d07771772622'
+  license:
+    key: eyJhbGciOiJSUzI1NiJ9.eyJwcm9kdWN0Ijoib3BlbmxlZ2FjeS1jb3JlIiwic3ViIjoib2wiLCJpc3N1ZWRfYXQiOiIyMDIwLTExLTI1VDAwOjAwOjAwWiIsInZhbGlkX2ZvciI6OTB9.GGQJepFIym1XYmF59D5k0IbBjbZjCqVJ3a2UDusbRwfSnOlgq6JWfXlMHfnhF9Qsn4UsQM0D-ioJMDeUi7crh1KxalJM-b1clyBLFIBgW_QmwjruVVOn2cz1_7L9DXKXR7wK98wPCTS-SXlf3t87nAbGVfoCaMbcLEXc6KmBCKNfOcEec3pnI43JtoRa_aLi7MNQDrLAOSKIfjW_wIqgbNxDsThVWTUtLFLNxKR9xCzPcE0w7TYnVGCmMb59k-a5cmyd-X4v5Rd8hN4lsVZZ_H3ELcGQI_5qFcXaFmkG80zgTWbOZUGz-0P6gIh12Ivydr7Vly7SzIxEOLAhJeGEmw
+
