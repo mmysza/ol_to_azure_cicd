@@ -10,10 +10,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  imageName: cont-mpx-svc-api-ref-articles
-  azureContainerRegistry: acrDsiInfraHubPro
-  acrUsername: xxxx
-  acrPassword: xxxx
+  imageName: ol-account-api
+  azureContainerRegistry: monoprix
+  acrUsername: maciej.myszkowski@inetum.world
+  acrPassword: Impaq34$
 
 steps:
 - task: Maven@3
@@ -46,3 +46,14 @@ steps:
     mavenOptions: '-Xmx3072m'
     jdkVersionOption: '1.11'
     jdkArchitectureOption: 'x64'
+- script: |
+    echo Construction et tag image docker
+    docker build -f $(Build.SourcesDirectory)/ora-sp-api/Dockerfile $(Build.SourcesDirectory)/target -t $(azureContainerRegistry).azurecr.io/$(imageName):latest -t $(azureContainerRegistry).azurecr.io/$(imageName):$(Build.BuildNumber)
+    echo Liste des images docker construites
+    docker image ls
+    echo Connexion Azure Container Registry
+    docker login -u $(acrUsername) -p $(acrPassword) $(azureContainerRegistry).azurecr.io
+    echo Push image docker vers Azure Container Registry
+    docker push $(azureContainerRegistry).azurecr.io/$(imageName):latest
+    docker push $(azureContainerRegistry).azurecr.io/$(imageName):$(Build.BuildNumber)
+  displayName: 'Construction de l''image docker et push de l''image vers $(azureContainerRegistry)'
