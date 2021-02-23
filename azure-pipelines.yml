@@ -48,7 +48,7 @@ steps:
     jdkArchitectureOption: 'x64'
 - script: |
     echo Construction et tag image docker
-    docker build -f $(Build.SourcesDirectory)/ora-sp-api/Dockerfile $(Build.SourcesDirectory)/target -t $(azureContainerRegistry).azurecr.io/$(imageName):latest -t $(azureContainerRegistry).azurecr.io/$(imageName):$(Build.BuildNumber)
+    docker build -f $(Build.SourcesDirectory)/ora-sp-api/Dockerfile $(Build.SourcesDirectory)/ora-sp-api/target -t $(azureContainerRegistry).azurecr.io/$(imageName):latest -t $(azureContainerRegistry).azurecr.io/$(imageName):$(Build.BuildNumber)
     echo Liste des images docker construites
     docker image ls
     echo Connexion Azure Container Registry
