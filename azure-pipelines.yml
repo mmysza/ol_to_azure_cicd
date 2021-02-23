@@ -31,3 +31,18 @@ steps:
     mavenOptions: '-Xmx3072m'
     jdkVersionOption: '1.11'
     jdkArchitectureOption: 'x64'
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'ora-sp-api/pom.xml'
+    goals: 'clean install'
+    options: '--settings settings.xml -DskipTests'
+    publishJUnitResults: false
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
+    mavenOptions: '-Xmx3072m'
+    jdkVersionOption: '1.11'
+    jdkArchitectureOption: 'x64'
