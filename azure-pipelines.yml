@@ -20,7 +20,7 @@ steps:
   inputs:
     mavenPomFile: 'ora-sp-sdk/pom.xml'
     goals: 'clean install'
-    options: '--settings settings.xml -DskipTests'
+    options: '-DskipTests'
     publishJUnitResults: false
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
@@ -35,7 +35,7 @@ steps:
   inputs:
     mavenPomFile: 'ora-sp-api/pom.xml'
     goals: 'clean install'
-    options: '--settings settings.xml -DskipTests'
+    #options: '--settings settings.xml -DskipTests'
     publishJUnitResults: false
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
