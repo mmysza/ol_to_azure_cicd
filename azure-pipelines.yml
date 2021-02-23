@@ -49,6 +49,7 @@ steps:
 - script: |
     echo Construction et tag image docker
     cd $(Build.SourcesDirectory)/ora-sp-api
+    ls target
     docker build -f Dockerfile target -t $(azureContainerRegistry).azurecr.io/$(imageName):latest -t $(azureContainerRegistry).azurecr.io/$(imageName):$(Build.BuildNumber)
     echo Liste des images docker construites
     docker image ls
