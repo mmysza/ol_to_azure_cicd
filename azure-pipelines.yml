@@ -12,8 +12,8 @@ pool:
 variables:
   imageName: ol-account-api
   azureContainerRegistry: monoprix
-  acrUsername: xxxx
-  acrPassword: xxxx
+  acrUsername: monoprix
+  acrPassword: XURgZl4RGj1GI/vbPMbCmaOVJxVbMIpl
 
 steps:
 - task: Maven@3
